@@ -50,7 +50,7 @@ p {
 	text-shadow: 2px 2px 4px rgba(0,0,0,0.8);
 }
 
-.opener-boys h5, .login h4, .signup h4 {
+.opener-boys h5, .login h4, .signup h4{
 	color: #14CC68;
 	text-shadow: 2px 2px 4px rgba(0,0,0,0.8);
 }
@@ -113,6 +113,32 @@ p {
 	}
 }
 
-.login {
+.login, .signup {
 	height: 75vh;
+}
+
+.collections-page h3 {
+	margin-left: 40px;
+	color: white;
+	text-shadow: 2px 2px 4px rgba(0,0,0,0.7);
+	text-decoration: underline;
+}
+
+.individual-photo {
+	display: inline-block;
+}
+
+.individual-photo img {
+	width: 20vw;
+	height: auto;
+	margin: 5px;
+}
+
+.collections-page hr {
+	border-color: #14CC68;
+}
+
+.checkbox-yellow[type="checkbox"].filled-in:checked + label:after{
+     border: 2px solid #fbc02d ;
+     background-color: #fbc02d ;
 }

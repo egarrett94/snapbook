@@ -1,5 +1,114 @@
+
+/*main purple #7612B2 */
+/*yellow #FFAE19 */
+/*brighter purple #9F00FF */
+/*lighter teal #14CC68 */
+/*teal #09B256 */
+
+@import url('https://fonts.googleapis.com/css?family=Montserrat:200,400');
+
 body {
-  margin: 0;
-  padding: 0;
-  font-family: sans-serif;
+	color: white;
+	background-color: #232323;
+	display: flex;
+    min-height: 100vh;
+    flex-direction: column;
+    font-family: 'Montserrat', sans-serif;
+}
+
+main {
+	flex: 1 0 auto;
+}
+
+p {
+	color: lightgrey;
+}
+
+.nav-wrapper {
+	height: 90px;
+	/*border-bottom: solid 7px #7b1fa2;*/
+}
+
+.hero {
+	background-image: url('./friends-taking-selfie.jpg');
+	background-size: cover;
+	width: 100vw;
+	height: 65vh;
+}
+
+.info-border {
+	border-left: solid 1px purple;
+	margin-top: 0!important;
+}
+
+.hero-row {
+	margin-bottom: 0!important;
+}
+
+.hero-header {
+	padding-top: 12vh;
+	text-shadow: 2px 2px 4px rgba(0,0,0,0.8);
+}
+
+.opener-boys h5 {
+	color: #14CC68;
+	text-shadow: 2px 2px 4px rgba(0,0,0,0.8);
+}
+
+.opener-boys {
+	margin-bottom: 0;
+}
+
+.opener-icons {
+	margin-top: 20px;
+}
+
+@media (max-width: 600px){
+	
+	.info-border{
+		border-left: none;
+		border-top: 1px solid purple;
+	}
+
+	.hero{
+		height: 150vh;
+		position: relative;
+	}
+
+	.hero-header {
+		position: relative;
+		z-index: 5;
+		padding-top: -50px;
+	}
+
+	.opener-boys {
+		color: white;
+		background-color: transparent;
+		position: absolute;
+		top: 0;
+		margin-top: 50vh;
+		z-index: 5;
+		overflow: scroll;
+		height: 100vh;
+	}
+
+	.opener-icons {
+		color: white;
+	}
+
+	.mobile-screen{
+		position: relative;
+	}
+
+	.mobile-screen:before {
+		position: absolute;
+		content:" ";
+		top:0;
+		left:0;
+		width:100%;
+		height:100%;
+		display: block;
+		z-index:3;
+		background-color: rgba(0,0,0,0.5);
+	}
 }

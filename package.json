@@ -21,6 +21,8 @@
   "homepage": "https://github.com/kyleavb/snapbook#readme",
   "dependencies": {
     "dotenv": "^5.0.1",
-    "express": "^4.16.3"
+    "express": "^4.16.3",
+    "jquery": "^3.3.1",
+    "react-materialize": "^2.1.4"
   }
 }

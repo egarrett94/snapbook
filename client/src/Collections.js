@@ -44,7 +44,9 @@ class Collections extends Component {
 
 						<br/><hr/><br/>
 						<h3>STEP THREE: </h3>
-						<p className='center grey-text lighten-2'>Let us build your SnapBook!</p>
+						<p className='center grey-text lighten-2'>Let us build your SnapBook!
+						<br />
+						<i className="material-icons large opener-icons">insert_photo</i></p>
 
 						<input type='submit' className='btn-large waves-effect waves-light yellow darken-2 col s12' name='submit'/>
 					</div>

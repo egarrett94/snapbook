@@ -6,14 +6,14 @@ import Footer from './Footer';
 import Home from './Home';
 import Login from './Login';
 import Signup from "./Signup";
-
+import Collections from './Collections';
 
 class App extends Component {
   render() {
     return (
       <div>
         <Nav/>
-        <Home />
+        <Collections />
         <Footer />
       </div>
     );

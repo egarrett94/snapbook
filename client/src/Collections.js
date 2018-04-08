@@ -3,6 +3,8 @@ import Input from 'react-materialize';
 import UserPhoto from './UserPhoto';
 import {Carousel} from 'react-materialize';
 
+//the layout_id in the carousel div inputs are what will determine which layout renders
+
 class Collections extends Component {
 
 	render() {
@@ -15,17 +17,23 @@ class Collections extends Component {
 						<h3>STEP ONE: </h3>
 						<p className='center grey-text lighten-2'>Pick one of our great layouts!</p>
 						<Carousel>
-							<div className='red'>
-							    <h2>First Layout</h2>
-							    
+							<div className='blue-grey center'>
+							    <h5>First Layout</h5>
+							    <input type="radio" id='layout_id' className='filled-in radio-yellow' name="layout" />
+							 
+							    <label htmlFor='layout_id'>Select</label>
 							  </div>
-							  <div className='amber'>
-							    <h2>Second Layout</h2>
-							    
+							  <div className='blue-grey lighten-3 center'>
+							    <h5>Second Layout</h5>
+							    <input type="radio" id='layout_id' className='filled-in radio-yellow' name="layout" />
+							 
+							    <label htmlFor='layout_id'>Select</label>
 							  </div>
-							  <div className='green'>
-							    <h2>Third Layout</h2>
-							    
+							  <div className='blue-grey lighten-1 center'>
+							    <h5>Third Layout</h5>
+							    <input type="radio" id='layout_id' className='filled-in radio-yellow' name="layout" />
+							 
+							    <label htmlFor='layout_id'>Select</label>
 							  </div>
 						</Carousel>
 						<br/><hr/><br/>
@@ -37,6 +45,9 @@ class Collections extends Component {
 						<br /><br />
 
 						<div className='photos-display row'>
+							<UserPhoto />
+							<UserPhoto />
+							<UserPhoto />
 							<UserPhoto />
 							<UserPhoto />
 							<UserPhoto />

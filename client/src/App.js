@@ -4,6 +4,8 @@ import Nav from './Nav';
 import './App.css';
 import Footer from './Footer';
 import Home from './Home';
+import Login from './Login';
+import Signup from "./Signup";
 
 
 class App extends Component {

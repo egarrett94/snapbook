@@ -13,21 +13,32 @@ import Login from './Login';
 import Signup from "./Signup";
 import Collections from './Collections';
 import Profile from './Profile';
-import BasicLayout from './BasicLayout';
+import DogLayout from './DogLayout';
+
+
+// <Router>
+//         <div>
+//           <Nav/>
+//           <Route exact path ='/' render={() => <Home />} />
+//           <Route path='/login' render={() => <Login />} />
+//           <Route path='/Signup' render={() => <Signup />} />
+//           <Route path='/collections' render={() => <Collections />} />
+//           <Footer />
+//         </div>
+//       </Router>
 
 class App extends Component {
   render() {
     return (
-      <Router>
-        <div>
-          <Nav/>
-          <Route exact path ='/' render={() => <Home />} />
-          <Route path='/login' render={() => <Login />} />
-          <Route path='/Signup' render={() => <Signup />} />
-          <Route path='/collections' render={() => <Collections />} />
-          <Footer />
-        </div>
-      </Router>
+
+      <div>
+        <Nav/>
+        <DogLayout />
+        <Footer />
+      </div>
+
+      
+
     );
   }
 }

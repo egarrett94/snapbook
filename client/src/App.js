@@ -8,14 +8,14 @@ import Login from './Login';
 import Signup from "./Signup";
 import Collections from './Collections';
 import Profile from './Profile';
-import BasicLayout from './BasicLayout';
+import DogLayout from './DogLayout';
 
 class App extends Component {
   render() {
     return (
       <div>
         <Nav/>
-        <BasicLayout />
+        <DogLayout />
         <Footer />
       </div>
     );

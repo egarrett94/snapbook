@@ -170,26 +170,26 @@ p {
 	padding: 50px;
 }
 
-.top-row-basic-layout {
+.top-row-basic-layout, .top-row-dog-layout {
 	margin-top: 50px;
 }
 
-.mid-row-basic-layout {
+.mid-row-basic-layout, .mid-row-dog-layout {
 	margin: 50px auto;
 }
 
-.bottom-row-basic-layout {
+.bottom-row-basic-layout, .bottom-row-dog-layout {
 	margin-bottom: 50px;
 }
 
-.basic-layout-photo-frame {
+.basic-layout-photo-frame, .dog-layout-photo-frame {
 	height: 200px;
 	width: 30vw;
 	overflow: hidden;
 	margin: 0 auto;
 }
 
-.basic-layout-photo-frame-mid {
+.basic-layout-photo-frame-mid, .dog-layout-photo-frame-mid {
 	height: 300px;
 	width: 50vw;
 	margin: 0 auto;
@@ -197,15 +197,50 @@ p {
 
 }
 
-.basic-layout-photo-frame img {
+.basic-layout-photo-frame img, .dog-layout-photo-frame img {
 	height: 200px;
 	width: auto;
 }
 
-.basic-layout-photo-frame-mid img {
+.basic-layout-photo-frame-mid img, .dog-layout-photo-frame-mid img {
 	height: 300px;
 	width: auto;
 }
+
+
+/* DOG LAYOUT STYLING */
+
+.dog-layout-photo-frame img {
+	border-radius: 50%;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

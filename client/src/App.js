@@ -1,4 +1,8 @@
 import React, { Component } from 'react';
+import {
+  BrowserRouter as Router,
+  Route
+} from 'react-router-dom';
 import Nav from './Nav';
 // import Footer from './Footer';
 import './App.css';
@@ -13,11 +17,16 @@ import BasicLayout from './BasicLayout';
 class App extends Component {
   render() {
     return (
-      <div>
-        <Nav/>
-        <BasicLayout />
-        <Footer />
-      </div>
+      <Router>
+        <div>
+          <Nav/>
+          <Route exact path ='/' render={() => <Home />} />
+          <Route path='/login' render={() => <Login />} />
+          <Route path='/Signup' render={() => <Signup />} />
+          <Route path='/collections' render={() => <Collections />} />
+          <Footer />
+        </div>
+      </Router>
     );
   }
 }

@@ -165,6 +165,11 @@ p {
 
 /* BASIC LAYOUT STYLING */
 
+.basic-layout {
+	background-color: white;
+	padding: 50px;
+}
+
 .top-row-basic-layout {
 	margin-top: 50px;
 }
@@ -188,7 +193,7 @@ p {
 	height: 300px;
 	width: 50vw;
 	margin: 0 auto;
-	overflow:hidden;
+	overflow: hidden;
 
 }
 

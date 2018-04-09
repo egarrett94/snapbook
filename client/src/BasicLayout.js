@@ -5,7 +5,7 @@ class BasicLayout extends Component {
 	render() {
 
 		return(
-			<div>
+			<div className='basic-layout'>
 				<div className='row top-row-basic-layout'>
 					<div className='col s6 center'>
 						<div className='basic-layout-photo-frame'>

@@ -1,10 +1,14 @@
 import React, { Component } from 'react';
+import {connect} from 'react-redux'
+
+const mapStateToProps = state => {
+	return{ state }
+  }
 
 class Home extends Component {
-
 	render() {
+		console.log(this.props.state)
 		return(
-
 				<div className='mobile-screen'>
 				   <div className='row hero-row'>
 					   <div className='hero center'>
@@ -40,4 +44,4 @@ class Home extends Component {
 }
 
 
-export default Home;
+export default connect(mapStateToProps)(Home);

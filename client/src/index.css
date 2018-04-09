@@ -162,3 +162,47 @@ p {
 .collections-display {
 	padding-bottom: 50px;
 }
+
+/* BASIC LAYOUT STYLING */
+
+.top-row-basic-layout {
+	margin-top: 50px;
+}
+
+.mid-row-basic-layout {
+	margin: 50px auto;
+}
+
+.bottom-row-basic-layout {
+	margin-bottom: 50px;
+}
+
+.basic-layout-photo-frame {
+	height: 200px;
+	width: 30vw;
+	overflow: hidden;
+	margin: 0 auto;
+}
+
+.basic-layout-photo-frame-mid {
+	height: 300px;
+	width: 50vw;
+	margin: 0 auto;
+	overflow:hidden;
+
+}
+
+.basic-layout-photo-frame img {
+	height: 200px;
+	width: auto;
+}
+
+.basic-layout-photo-frame-mid img {
+	height: 300px;
+	width: auto;
+}
+
+
+
+
+

@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import Input from 'react-materialize';
+import {Input} from 'react-materialize';
 import UserPhoto from './UserPhoto';
 import {Carousel} from 'react-materialize';
 
@@ -55,9 +55,10 @@ class Collections extends Component {
 
 						<br/><hr/><br/>
 						<h3>STEP THREE: </h3>
-						<p className='center grey-text lighten-2'>Let us build your SnapBook!
+						<p className='center grey-text lighten-2'>Name it and let us build your SnapBook!
 						<br />
 						<i className="material-icons large opener-icons">insert_photo</i></p>
+						<Input type="text" label="Name of SnapBook" s={12} icon='add_to_photos'/>
 
 						<input type='submit' className='btn-large waves-effect waves-light yellow darken-2 col s12' name='submit'/>
 					</div>

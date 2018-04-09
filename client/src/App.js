@@ -7,13 +7,14 @@ import Home from './Home';
 import Login from './Login';
 import Signup from "./Signup";
 import Collections from './Collections';
+import Profile from './Profile';
 
 class App extends Component {
   render() {
     return (
       <div>
         <Nav/>
-        <Collections />
+        <Profile />
         <Footer />
       </div>
     );

@@ -9,8 +9,8 @@ class Home extends Component {
 				   <div className='row hero-row'>
 					   <div className='hero center'>
 					   		<div className='hero-header'>
-						   		<h2>Something clever!</h2>
-						   		<h5>Briefly explaining what we do!</h5>
+						   		<h2>Share the love.</h2>
+						   		<h5>Make your memories magical with our free layouts!</h5>
 						   		<br/>
 						   		<a className='btn-large waves-effect waves-light yellow darken-2 z-depth-3'>Get Started!</a>
 						   	</div>
@@ -21,26 +21,17 @@ class Home extends Component {
 						<div className='col s8 offset-s2 m4 center'>
 							<i className="material-icons large opener-icons">cloud_upload</i>
 							<h5>Upload</h5>
-							<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-							tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-							quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-							consequat.</p>
+							<p>Upload your favorite photos and view them whenever you'd like!</p>
 						</div>
 						<div className='col s8 offset-s2 m4 center info-border'>
 							<i className="material-icons large opener-icons">insert_photo</i>
 							<h5>Display</h5>
-							<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-							tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-							quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-							consequat.</p>
+							<p>Use our sweet layouts to display your favorite photos!</p>
 						</div>
 						<div className='col s8 offset-s2 m4 center info-border'>
 							<i className="material-icons large opener-icons">mood</i>
 							<h5>Share</h5>
-							<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-							tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-							quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-							consequat.</p>
+							<p>Share your unique photo sets with your friends and family!</p>
 						</div>
 					</div>
 				</div>

@@ -50,7 +50,7 @@ p {
 	text-shadow: 2px 2px 4px rgba(0,0,0,0.8);
 }
 
-.opener-boys h5, .login h4, .signup h4{
+.opener-boys h5, .login h4, .signup h4, .profile-page h4{
 	color: #14CC68;
 	text-shadow: 2px 2px 4px rgba(0,0,0,0.8);
 }
@@ -141,4 +141,24 @@ p {
 .checkbox-yellow[type="checkbox"].filled-in:checked + label:after{
      border: 2px solid #fbc02d ;
      background-color: #fbc02d ;
+}
+
+.profile-pic {
+	height: 100px;
+	width: auto;
+}
+
+.profile-pic-frame {
+	height: 100px;
+	width: 100px;
+	overflow: hidden;
+	margin: 0 auto;
+}
+
+.intro-words {
+	color: purple;
+}
+
+.collections-display {
+	padding-bottom: 50px;
 }

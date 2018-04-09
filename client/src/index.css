@@ -168,6 +168,7 @@ p {
 .basic-layout {
 	background-color: white;
 	padding: 50px;
+	position: relative;
 }
 
 .top-row-basic-layout, .top-row-dog-layout {
@@ -210,11 +211,89 @@ p {
 
 /* DOG LAYOUT STYLING */
 
-.dog-layout-photo-frame img {
-	border-radius: 50%;
+.dog-layout {
+	background-image: url('https://images1.dawandastatic.com/Product3/82204/82204643/product_l/1432122677-336.jpg');
+	background-size: cover;
+	padding: 50px;
+	position: relative;
+	z-index: 0;
 }
 
+.top-row-dog-layout, .mid-row-dog-layout, .bottom-row-dog-layout {
+	position: relative;
+	z-index: 0;
+}
 
+.dog-layout-photo-frame {
+	overflow: none;
+}
+
+.dog-layout-photo-frame img {
+	border-radius: 50%;
+	border:solid 2px;
+	border-bottom-color:#ffe;
+	border-left-color:#eed;
+	border-right-color:#eed;
+	border-top-color:#ccb;
+}
+
+.dog-layout-photo-frame-mid img {
+	border:solid 2px;
+	border-bottom-color:#ffe;
+	border-left-color:#eed;
+	border-right-color:#eed;
+	border-top-color:#ccb;
+}
+
+.dog-layout-inner-frame {
+	max-width: 100%;
+	max-height: 100%;
+	overflow: hidden;
+}
+
+.dog-layout-photo-frame-mid {
+	background-color:#ddc;
+	border:solid 5vmin #eee;
+	border-bottom-color:#fff;
+	border-left-color:#eee;
+	border-radius:2px;
+	border-right-color:#eee;
+	border-top-color:#ddd;
+	box-shadow:0 0 5px 0 rgba(0,0,0,.25) inset, 0 5px 10px 5px rgba(0,0,0,.25);
+	box-sizing:border-box;
+	display:inline-block;
+	margin:10vh 10vw;
+	height:80vh;
+	padding:8vmin;
+	position:relative;
+	text-align:center;
+		&:before {
+		border-radius:2px;
+		bottom:-2vmin;
+		box-shadow:0 2px 5px 0 rgba(0,0,0,.25) inset;
+		content:"";
+		left:-2vmin;
+		position:absolute;
+		right:-2vmin;
+		top:-2vmin;
+	}
+		&:after {
+		border-radius:2px;
+		bottom:-2.5vmin;
+		box-shadow: 0 2px 5px 0 rgba(0,0,0,.25);
+		content:"";
+		left:-2.5vmin;
+		position:absolute;
+		right:-2.5vmin;
+		top:-2.5vmin;
+	}
+}
+
+.dog-layout-photo-frame.top-left img {
+	z-index: 5!important;
+	margin-top: 50px;
+	position: relative;
+}
 
 
 

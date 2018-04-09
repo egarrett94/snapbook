@@ -11,6 +11,8 @@ import Home from './Home';
 import Login from './Login';
 import Signup from "./Signup";
 import Collections from './Collections';
+import Profile from './Profile';
+import BasicLayout from './BasicLayout';
 
 class App extends Component {
   render() {

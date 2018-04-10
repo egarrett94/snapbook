@@ -7,20 +7,25 @@ class CelebrationLayout extends Component {
 		return(
 			<div className='celebration-layout'>
 				<div className='row'>
-					<div className='col s8 offset-2 celebration-layout-top-row'>
-						<img src='http://www.placekitten.com/g/700/350' alt='meow' />
-					</div>
-					<div className='row celebration-layout-middle-row'>
-						<div className='col s6'>
-							<img src='http://www.placekitten.com/g/700/400' alt='meow' />
+					<h4 className='celebration-header'>Let's Celebrate!</h4>
+					<div className='col s8 offset-s2'>
+						<div className='row celebration-layout-top-row'>
+							<div className='col s12 celebration-layout-frame'>
+								<img src='http://www.placekitten.com/g/700/350' alt='meow' />
+							</div>
 						</div>
-						<div className='col s6'>
-							<img src='http://www.placekitten.com/g/700/500' alt='meow' />	
+						<div className='row celebration-layout-middle-row'>
+							<div className='col s6 celebration-layout-frame'>
+								<img src='http://www.placekitten.com/g/700/400' alt='meow' />
+							</div>
+							<div className='col s6 celebration-layout-frame'>
+								<img src='http://www.placekitten.com/g/700/500' alt='meow' />	
+							</div>
 						</div>
-					</div>
-					<div className='row'>
-						<div className='col s8 offset-2'>
-							<img src='http://www.placekitten.com/g/700/450' alt='meow' />
+						<div className='row celebration-layout-bottom-row'>
+							<div className='col s12 celebration-layout-frame'>
+								<img src='http://www.placekitten.com/g/700/450' alt='meow' />
+							</div>
 						</div>
 					</div>
 				</div>

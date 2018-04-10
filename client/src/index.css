@@ -6,6 +6,7 @@
 /*teal #09B256 */
 
 @import url('https://fonts.googleapis.com/css?family=Montserrat:200,400');
+@import url('https://fonts.googleapis.com/css?family=Pacifico');
 
 body {
 	color: white;
@@ -294,22 +295,79 @@ p {
 
 /* CELEBRATION LAYOUT */
 
-.celebration-layout-top-row {
+.celebration-layout {
+	background-image: url('http://www.freeimageslive.com/galleries/backdrops/glitter/pics/gold_glitter_border.jpg');
+	background-size: cover;
+	font-family: 'Pacifico', cursive;
+}
+
+.celebration-header {
+	position: absolute;
+	z-index: 5;
+	font-size: 70px;
+	top: 50px;
+	left: 10px;
+	transform: rotate(-20deg);
+	 background: -webkit-linear-gradient(#eee, #7612B2);
+  	-webkit-background-clip: text;
+  	-webkit-text-fill-color: transparent;
+}
+
+.celebration-layout-top-row, .sunflower-layout-top-row {
 	overflow: hidden;
 	height: 40vh;
-	width: 100%;
+	margin-top: 40px;
+}
+
+.celebration-layout-frame, .sunflower-layout-frame, .graphic-layout-frame{
+	overflow: hidden;
+}
+
+.celebration-layout-middle-row .celebration-layout-frame, .sunflower-layout-middle-row .sunflower-layout-frame {
+	width: 50%;
+	height: 40vh;
+}
+
+/*SUNFLOWER LAYOUT*/
+
+.sunflower-layout {
+	background-image: url('http://hddesktopwallpapers.in/wp-content/uploads/2015/11/sunflower-background-images.jpg');
+	background-size: cover;
+	padding: 100px;
+}
+
+.sunflower-layout-bottom-row .sunflower-layout-frame {
+	height: 40vh;
+}
+
+.window {
+	background-color: white;
+	padding-left: 0px!important;
+	box-shadow:0 0 5px 0 rgba(0,0,0,.25) inset, 0 5px 10px 5px rgba(0,0,0,.25);
+}
+
+.sunflower-layout .row {
+	margin-bottom: 10px;
 }
 
 
+/*GRAPHIC DESIGN IS MY PASSION*/
 
+.graphic-layout {
+	font-family: "Comic Sans MS", "Comic Sans", cursive;
+	background: linear-gradient(to bottom right, red, yellow);
+	color: lightgreen;
+	padding: 50px;
+}
 
+.froggo {
+	width: 200px;
+	float: right;
+}
 
-
-
-
-
-
-
+.graphic-layout-frame {
+	border-radius: 50%;
+}
 
 
 

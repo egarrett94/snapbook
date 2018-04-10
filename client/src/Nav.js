@@ -19,8 +19,8 @@ class Nav extends Component {
 		return (
 			<div>
 				<Navbar brand='SnapBook' className='purple darken-3' right>
-					<Link to='/login'>Login</Link>
-					<Link to='/'>Home</Link>
+					<li><Link to='/login'>Login</Link></li>
+					<li><Link to='/'>Home</Link></li>
 				</Navbar>
 			</div>
 		)

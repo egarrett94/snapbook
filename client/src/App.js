@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import {connect} from 'react-redux'
 import {
   BrowserRouter as Router,
   Route
@@ -42,4 +43,6 @@ class App extends Component {
   }
 }
 
-export default App;
+export default connect((state, props) => {
+  return{}
+})(App);

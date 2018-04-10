@@ -29,12 +29,12 @@ class DogLayout extends Component {
 				</div>
 				<div className='row bottom-row-dog-layout'>
 					<div className='col s6 center'>
-						<div className='dog-layout-photo-frame'>
+						<div className='dog-layout-photo-frame bottom-left'>
 							<img src='http://www.placekitten.com/g/300/300' alt='meow' />
 						</div>
 					</div>
 					<div className='col s6 center'>
-						<div className='dog-layout-photo-frame'>
+						<div className='dog-layout-photo-frame bottom-right'>
 							<img src='http://www.placekitten.com/g/300/300' alt='meow' />
 						</div>
 					</div>

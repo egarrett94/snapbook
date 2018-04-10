@@ -12,7 +12,7 @@ import Login from './Login';
 import Signup from "./Signup";
 import Collections from './Collections';
 import Profile from './Profile';
-import DogLayout from './DogLayout';
+import CelebrationLayout from './CelebrationLayout';
 
 
 // <Router>
@@ -32,7 +32,7 @@ class App extends Component {
 
       <div>
         <Nav/>
-        <DogLayout />
+        <CelebrationLayout />
         <Footer />
       </div>
 

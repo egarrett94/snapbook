@@ -224,17 +224,9 @@ p {
 	z-index: 0;
 }
 
-.dog-layout-photo-frame {
-	overflow: none;
-}
-
 .dog-layout-photo-frame img {
 	border-radius: 50%;
-	border:solid 2px;
-	border-bottom-color:#ffe;
-	border-left-color:#eed;
-	border-right-color:#eed;
-	border-top-color:#ccb;
+	border: solid 15px #ccb;
 }
 
 .dog-layout-photo-frame-mid img {
@@ -289,28 +281,24 @@ p {
 	}
 }
 
-.dog-layout-photo-frame.top-left img {
+.dog-layout-photo-frame.top-left {
 	z-index: 5!important;
-	margin-top: 50px;
-	position: relative;
+	margin-top: 100px;
+}
+
+.dog-layout-photo-frame.bottom-left {
+	z-index: 5!important;
+	margin-top: 100px;
 }
 
 
+/* CELEBRATION LAYOUT */
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+.celebration-layout-top-row {
+	overflow: hidden;
+	height: 40vh;
+	width: 100%;
+}
 
 
 

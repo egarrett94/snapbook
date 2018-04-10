@@ -36,11 +36,12 @@ class Login extends Component {
 				<div className='col s8 offset-s2 login'>
 					<h4> Log In! </h4>
 					<hr />
-					<Input type="email" label="Email" s={12}/>
-					<br />
-				    <Input type="password" label="Password" s={12}/>
-
-				    <a className='btn waves-effect waves-light yellow darken-2 col s4 offset-s4' onClick={this.submit}>Log In!</a>
+					<form>
+						<Input type="email" label="Email" s={12}/>
+						<br />
+						<Input type="password" label="Password" s={12}/>
+						<a className='btn waves-effect waves-light yellow darken-2 col s4 offset-s4' onClick={this.submit}>Log In!</a>
+					</form>
 				</div>
 			</Row>
 		)

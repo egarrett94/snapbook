@@ -16,13 +16,13 @@ import Profile from './Profile';
 import CelebrationLayout from './CelebrationLayout';
 
 
-
-
 class App extends Component {
   render() {
     return (
 
+
      <Router>
+
         <div>
           <Nav/>
           <Route exact path ='/' render={() => <Home />} />
@@ -32,7 +32,6 @@ class App extends Component {
           <Footer />
         </div>
       </Router>
-      
 
     );
   }

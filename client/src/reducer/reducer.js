@@ -19,6 +19,8 @@ function userApp(state = initialState, action){
                     userName: action.data.userName
                 })
             )
+        default:
+            return state
     }
 }
 export default userApp

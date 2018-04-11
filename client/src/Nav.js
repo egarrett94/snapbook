@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 // gonna need links
 import {Navbar} from 'react-materialize';
-import M from 'materialize-css'
+// import M from 'materialize-css'
 import {userLogout} from './action/actions'
 import { Redirect, Route, Link } from 'react-router-dom';
 import { connect } from 'react-redux';
@@ -39,7 +39,7 @@ class Nav extends Component {
 			location: '/'
 		})
 		this.props.userLogout()
-		M.toast({classes: 'yellow', html: 'You have Logged Out!'})
+		// M.toast({classes: 'yellow', html: 'You have Logged Out!'})
 		
 	}
 

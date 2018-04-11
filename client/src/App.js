@@ -13,6 +13,7 @@ import Login from './Login';
 import Signup from "./Signup";
 import Collections from './Collections';
 import Profile from './Profile';
+import AboutUs from './AboutUs';
 
 
 const mapStateToProps = state => {
@@ -21,19 +22,19 @@ const mapStateToProps = state => {
 
 class App extends Component {
 
-
+  // <Nav/>
+  //         <Route exact path ='/' render={() => <Home />} />
+  //         <Route path='/login' render={() => <Login />} />
+  //         <Route path='/Signup' render={() => <Signup />} />
+  //         <Route path='/collections' render={() => <Collections />} />
+  //         <Route path='/profile' render={() => <Profile />} />
+  //         <Footer />
   
   render() {
     return (
      <Router>
         <div>
-          <Nav/>
-          <Route exact path ='/' render={() => <Home />} />
-          <Route path='/login' render={() => <Login />} />
-          <Route path='/Signup' render={() => <Signup />} />
-          <Route path='/collections' render={() => <Collections />} />
-          <Route path='/profile' render={() => <Profile />} />
-          <Footer />
+         <AboutUs />
         </div>
       </Router>
 

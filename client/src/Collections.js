@@ -2,6 +2,7 @@ import React, {Component} from 'react';
 import {Input} from 'react-materialize';
 import UserPhoto from './UserPhoto';
 import {Carousel} from 'react-materialize';
+import M from 'materialize-css'
 
 //the layout_id in the carousel div inputs are what will determine which layout renders
 

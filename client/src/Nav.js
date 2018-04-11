@@ -40,7 +40,7 @@ class Nav extends Component {
 			location: '/'
 		})
 		this.props.userLogout()
-		// M.toast({classes: 'yellow', html: 'You have Logged Out!'})
+		window.Materialize.toast("You've logged out!", 3000, 'yellow')
 		
 	}
 

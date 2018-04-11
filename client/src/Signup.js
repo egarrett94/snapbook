@@ -5,7 +5,7 @@ import {connect} from 'react-redux'
 import {liftUser} from './action/actions'
 import axios from 'axios'
 import Button from 'react-materialize/lib/Button';
-import M from 'materialize-css'
+// import M from 'materialize-css'
 
 const mapStateToProps = state => {
 	return{ state }
@@ -68,7 +68,7 @@ class Signup extends Component {
 		}).then( data => {
 			if(data.data.user){
 				console.log(data.data.user.userName)
-				M.toast({classes: 'green', html: 'Account Created and Logged in!'})
+				// M.toast({classes: 'green', html: 'Account Created and Logged in!'})
 				localStorage.setItem('snapbookToken', data.data.token)
 				this.props.liftUser({
 				firstName: data.data.user.firstName,
@@ -79,7 +79,7 @@ class Signup extends Component {
 				memberSince: data.data.user.createdAt
 				})
 			}else{
-				M.toast({classes: 'red',html: data.data})
+				// M.toast({classes: 'red',html: data.data})
 				this.setState({
 					redirect: true,
 					location: '/login'

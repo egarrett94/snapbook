@@ -4,7 +4,7 @@ import {Redirect} from 'react-router-dom'
 import {connect} from 'react-redux'
 import {liftUser} from './action/actions'
 import {Row, Input} from 'react-materialize';
-import M from 'materialize-css'
+// import M from 'materialize-css'
 
 const mapStateToProps = state => {
 	return{ state }
@@ -49,7 +49,7 @@ class Login extends Component {
 		}).then((data)=>{
 			console.log(data.data.user)
 			if(data.data.user){
-				M.toast({classes: 'green', html: 'Log in successful!'})
+				// M.toast({classes: 'green', html: 'Log in successful!'})
 				localStorage.setItem('snapbookToken', data.data.token)
 				this.props.liftUser({
 				firstName: data.data.user.firstName,
@@ -64,7 +64,7 @@ class Login extends Component {
 					location: '/'
 				})
 			}else{
-				M.toast({classes: 'red',html: 'Incorrect email/password, please try again'})
+				// M.toast({classes: 'red',html: 'Incorrect email/password, please try again'})
 			}
 		})
 	}

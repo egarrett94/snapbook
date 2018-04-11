@@ -389,4 +389,18 @@ hr {
 }
 
 
+.mostly-human-developer {
+	width: 250px;
+	height: 250px;
+	border-radius: 50%;
+}
+
+.social-icons {
+	width: 50px;
+	height: 50px;
+	display: inline-block;
+	filter: opacity(60%);
+	margin: 0 4px;
+}
+
 

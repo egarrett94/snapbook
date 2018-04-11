@@ -2,13 +2,20 @@ import React, {Component} from 'react';
 import {Input} from 'react-materialize';
 import UserPhoto from './UserPhoto';
 import {Carousel} from 'react-materialize';
-import M from 'materialize-css'
+// import M from 'materialize-css';
 
 //the layout_id in the carousel div inputs are what will determine which layout renders
 
 class Collections extends Component {
 
+	// componentDidMount() {
+	// 	var elem = document.querySelector('.carousel');
+ //  		var instance = M.Carousel.init(elem);
+ //  		var instance = M.Carousel.getInstance(elem);
+	// }
+
 	render() {
+
 		return(
 			<div className='collections-page'>
 				<form>
@@ -17,7 +24,7 @@ class Collections extends Component {
 
 						<h3>STEP ONE: </h3>
 						<p className='center grey-text lighten-2'>Pick one of our great layouts!</p>
-						<Carousel>
+						<Carousel className='carousel'>
 							<div className='blue-grey center z-depth-5'>
 							    <h5>First Layout</h5>
 							    <input type="radio" id='layout_id' className='filled-in radio-yellow' name="layout" />

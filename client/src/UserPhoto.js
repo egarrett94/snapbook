@@ -10,10 +10,10 @@ class UserPhoto extends Component {
 	render() {
 		return (
 			<div className='individual-photo center'>
-				<img src='http://www.placekitten.com/g/200/200' alt='kitty'/>
+				<img src={this.props.src} alt='kitty'/>
 				<br/>
-				<input type="checkbox" id='photo_id' className='filled-in checkbox-yellow' name="photo" />
-				<label htmlFor='photo_id'></label>
+				<input type="checkbox" id={this.props.count} className='filled-in checkbox-yellow' name="photo" />
+				<label htmlFor={this.props.count} ></label>
 			</div>
 		)
 	}

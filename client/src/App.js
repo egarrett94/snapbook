@@ -22,19 +22,19 @@ const mapStateToProps = state => {
 
 class App extends Component {
 
-  // <Nav/>
-  //         <Route exact path ='/' render={() => <Home />} />
-  //         <Route path='/login' render={() => <Login />} />
-  //         <Route path='/Signup' render={() => <Signup />} />
-  //         <Route path='/collections' render={() => <Collections />} />
-  //         <Route path='/profile' render={() => <Profile />} />
-  //         <Footer />
+
   
   render() {
     return (
      <Router>
         <div>
-         <AboutUs />
+        <Nav/>
+          <Route exact path ='/' render={() => <Home />} />
+          <Route path='/login' render={() => <Login />} />
+          <Route path='/Signup' render={() => <Signup />} />
+          <Route path='/collections' render={() => <Collections />} />
+          <Route path='/profile' render={() => <Profile />} />
+          <Footer />
         </div>
       </Router>
 

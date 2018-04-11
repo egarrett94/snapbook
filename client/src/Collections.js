@@ -1,34 +1,64 @@
 import React, {Component} from 'react';
-import {Input} from 'react-materialize';
+import {Input, Modal, Button} from 'react-materialize';
 import axios from 'axios';
 import UserPhoto from './UserPhoto';
 import {Carousel} from 'react-materialize';
+import {connect} from 'react-redux'
 // import M from 'materialize-css';
 
 //the layout_id in the carousel div inputs are what will determine which layout renders
 
+const mapStateToProps = state => {
+	return{ state }
+  }
+
 class Collections extends Component {
 	constructor(props){
 		super(props)
-
-		this.submit = this.submit.bind(this)
+		this.state={
+			pictures: []
+		}
+		this.submitNewOPhoto = this.submitNewOPhoto.bind(this)
 	}
 
-	submit(e){
+	submitNewOPhoto(e){
 		e.preventDefault()
-		axios.post('/collections').then((data)=>{
-			console.log(data)
-		})
+		console.log(e.target)
+		// axios.post('/collections',{
+
+		// }).then((data)=>{
+		// 	console.log(data)
+		// })
 	}
 
-	// componentDidMount() {
-	// 	var elem = document.querySelector('.carousel');
- //  		var instance = M.Carousel.init(elem);
- //  		var instance = M.Carousel.getInstance(elem);
-	// }
+	componentDidMount() {
+		if(this.props.state.userId){
+			axios.post('/collections/index',{
+				userId: this.props.state.userId
+			}).then(data => {
+				this.setState({
+					pictures: data.data
+				})
+			})
+		}
+	}
 
 	render() {
-
+		console.log(this.state)
+		let collection = this.state.pictures.map((butt, i) =>
+			<UserPhoto src={butt.url} key={i} count={butt.id} />)
+		let subPhotoModal = this.props.state.userId ? 
+			<div>
+				<form encType="multipart/form-data">
+					<input type="file" name="myFile" />
+					<input type="hidden" value={this.props.state.userId} name='userId' />
+					<input type="submit" className="btn btn-primary" onClick={this.submitNewOPhoto}/>
+				</form>
+			</div>
+		 : 
+		 	<div>
+				<p>Please Login First</p> 
+			</div>
 		return(
 			<div className='collections-page'>
 				<form>
@@ -61,25 +91,16 @@ class Collections extends Component {
 
 						<h3>STEP TWO: </h3>
 						<p className='center grey-text lighten-2'>Pick your photos!</p>
-						<a className='btn waves-effect waves-light grey lighten-2 col s4 offset-s4 grey-text text-darken-3 z-depth-4 modal-trigger' href='#submitPhoto'>Upload Photos</a>
-						<div id="submitPhoto" className="modal">
-							<div className="modal-content">
-								<h4>Modal Header</h4>
-								<p>A bunch of text</p>
-							</div>
-							<div className="modal-footer">
-								<a href="#!" className="modal-action modal-close waves-effect waves-green btn-flat">Agree</a>
-							</div>
-						</div>
+						<button data-target="submitPhoto" >Upload Photos</button>
+						<Modal
+							header='Choose File to Upload'
+							trigger={<Button className='modal-trigger btn waves-effect waves-light grey lighten-2 col s4 offset-s4 grey-text text-darken-3 z-depth-4'>Upload Photo</Button>}>
+							{subPhotoModal}
+						</Modal>
 						<br /><br />
 
 						<div className='photos-display row'>
-							<UserPhoto />
-							<UserPhoto />
-							<UserPhoto />
-							<UserPhoto />
-							<UserPhoto />
-							<UserPhoto />
+							{collection}
 						</div>
 
 						<br/><hr/><br/>
@@ -100,4 +121,4 @@ class Collections extends Component {
 
 }
 
-export default Collections;
+export default connect(mapStateToProps)(Collections);

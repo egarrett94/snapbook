@@ -15,19 +15,22 @@ import Collections from './Collections';
 import Profile from './Profile';
 
 
+const mapStateToProps = state => {
+	return{ state }
+  }
+
 class App extends Component {
+
   render() {
     return (
-
-
      <Router>
-
         <div>
           <Nav/>
           <Route exact path ='/' render={() => <Home />} />
           <Route path='/login' render={() => <Login />} />
           <Route path='/Signup' render={() => <Signup />} />
           <Route path='/collections' render={() => <Collections />} />
+          <Route path='/profile' render={() => <Profile />} />
           <Footer />
         </div>
       </Router>
@@ -36,6 +39,8 @@ class App extends Component {
   }
 }
 
-export default connect((state, props) => {
-  return{}
-})(App);
+export default connect(mapStateToProps)(App)
+
+// export default connect((state, props) => {
+//   return{}
+// })(App);

@@ -1,11 +1,42 @@
 import React, { Component } from 'react';
 import {connect} from 'react-redux'
+import {liftUser} from './action/actions'
+import axios from 'axios'
 
 const mapStateToProps = state => {
 	return{ state }
   }
 
+const mapDispatchToProps = dispatch => {
+	return{
+			liftUser: (userInfo) => dispatch(liftUser(userInfo)),
+	}
+}
+
 class Home extends Component {
+
+	componentDidMount(){
+		var token = localStorage.getItem('snapbookToken')
+		if(token === 'undefined' || token === null || token === '' || token === undefined){
+			localStorage.removeItem('snapbookToken')
+		}else{
+			if(!this.props.state.userName && token){
+				console.log('legit')
+				axios.post('/auth/me/from/token', {
+					token: token
+      			}).then(data =>{
+					this.props.liftUser({
+						firstName: data.data.firstName,
+						lastName: data.data.lastName,
+						email: data.data.email,
+						userName: data.data.userName,
+						userId: data.data.id,
+						})
+				  })
+			}
+		}
+	}
+
 	render() {
 		console.log(this.props.state)
 		return(
@@ -44,4 +75,4 @@ class Home extends Component {
 }
 
 
-export default connect(mapStateToProps)(Home);
+export default connect(mapStateToProps, mapDispatchToProps)(Home);

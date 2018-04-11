@@ -6,6 +6,7 @@ import {userLogout} from './action/actions'
 import { Redirect, Route, Link } from 'react-router-dom';
 import { connect } from 'react-redux';
 
+
 const mapStateToProps = state => {
 	return{ state }
   }
@@ -44,18 +45,7 @@ class Nav extends Component {
 	}
 
 	render() {
-		let { redirect } = this.state
 		let {userId} = this.props.state
-		if(redirect){
-			console.log('test')
-			
-			return (
-				<Nav />,
-				<Redirect to={{
-					pathname: this.state.location
-				}} />
-			)
-		}
 		let login = userId ? <Link to='/logout' onClick={this.logout}>Log Out</Link> : <Link to='/login'>Login</Link>
 		let profile = userId ? <Link to='/profile'>Profile</Link> : <Link to='/signup'>Signup</Link>
 		return (

@@ -1,12 +1,43 @@
 require('dotenv').config()
 var express = require('express')
 var router = express.Router();
+var multer = require('multer');
+var upload = multer({ dest: './uploads/'});
 var db = require('../models')
+var cloudinary = require('cloudinary')
 
 
-router.post('/', (req, res) =>{
-    console.log('Collections Post Route')
-    res.send('get fucked')
+cloudinary.config({ 
+    cloud_name: 'kylecloud', 
+    api_key: process.env.CLOUD_KEY, 
+    api_secret: process.env.CLOUD_SECRET 
+})
+
+router.post('/', upload.single("myFile"), (req, res) =>{
+    var newPicUrl = ''
+    console.log(req.file)
+    cloudinary.uploader.upload(req.file.path, (result) => {
+    }).then((result) =>{
+        newPicUrl = result.url
+        db.photo.create({
+            url: newPicUrl,
+            user_id: req.body.userId
+        }).then(result =>{
+            db.photo.findAll({
+                where:{user_id: req.body.userId}
+            }).then(data =>{
+                res.status(200).send('All Good')
+            })
+        })
+    }) 
+})
+
+router.post('/index', (req, res) =>{
+    db.photo.findAll({
+        where:{user_id: req.body.userId}
+    }).then(data =>{
+        res.send(data)
+    })
 })
 
 module.exports = router;

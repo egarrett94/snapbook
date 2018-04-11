@@ -22,12 +22,11 @@ const mapStateToProps = state => {
 
 class App extends Component {
 
- 
   render() {
     return (
      <Router>
         <div>
-          <Nav/>
+        <Nav/>
           <Route exact path ='/' render={() => <Home />} />
           <Route path='/login' render={() => <Login />} />
           <Route path='/Signup' render={() => <Signup />} />
@@ -35,7 +34,6 @@ class App extends Component {
           <Route path='/profile' render={() => <Profile />} />
           <Route path='/about' render={() => <AboutUs />} />
           <Footer />
-  
         </div>
       </Router>
 

@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import {Redirect, Link} from 'react-router-dom'
 import { connect } from 'react-redux';
-// import M from 'materialize-css'
 const mapStateToProps = state => {
   return{ state }
 }

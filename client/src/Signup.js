@@ -1,4 +1,5 @@
 import React, {Component} from 'react';
+import {Redirect} from 'react-router-dom'
 import {Row, Input} from 'react-materialize';
 import {connect} from 'react-redux'
 import {liftUser} from './action/actions'
@@ -24,7 +25,9 @@ class Signup extends Component {
 			lastName: '',
 			userName: '',
 			email: '',
-			password: ''
+			password: '',
+			redirect: false,
+			location: ''
 		}
 		this.submitForm = this.submitForm.bind(this)
 		this.firstChange = this.firstChange.bind(this)
@@ -76,6 +79,10 @@ class Signup extends Component {
 				})
 			}else{
 				M.toast({classes: 'red',html: data.data})
+				this.setState({
+					redirect: true,
+					location: '/login'
+				})
 			}
 			
 		})
@@ -83,6 +90,11 @@ class Signup extends Component {
 	}
 
 	render() {
+		const { redirect } = this.state;
+
+		if(redirect){
+			return <Redirect to={this.state.location} />
+		}
 		return(
 			<Row>
 				<div className='col s8 offset-s2 signup'>

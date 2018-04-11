@@ -1,8 +1,10 @@
 import React, {Component} from 'react';
 import axios from 'axios'
+import {Redirect} from 'react-router-dom'
 import {connect} from 'react-redux'
 import {liftUser} from './action/actions'
 import {Row, Input} from 'react-materialize';
+import M from 'materialize-css'
 
 const mapStateToProps = state => {
 	return{ state }
@@ -16,37 +18,70 @@ const mapDispatchToProps = dispatch => {
 class Login extends Component {
 	constructor(props){
 		super(props)
-
+		this.state={
+			email: '',
+			password: '',
+			redirect: false,
+			location: ''
+		}
+		this.emailChange = this.emailChange.bind(this)
+		this.passwordChange = this.passwordChange.bind(this)
 		this.submit = this.submit.bind(this)
 	}
+
+	emailChange(e){
+		this.setState({
+			email: e.target.value
+		})
+	}
+
+	passwordChange(e){
+		this.setState({
+			password: e.target.value
+		})
+	}
+
 	submit(e){
 		e.preventDefault()
 		axios.post('/auth/login', {
-			test: 'test'
+			email: this.state.email,
+			password: this.state.password
 		}).then((data)=>{
-			console.log('stuff')
-			console.log(data)
-		  })
-		// var data = {
-		// 	userId: 'test',
-		// 	firstName: "kyle",
-		// 	lastName: "Van Bergen",
-		// 	userName: "butts"
-		// }
-		// this.props.liftUser(data)
+			if(data.data.user){
+				M.toast({classes: 'green', html: 'Log in successful!'})
+				localStorage.setItem('snapbookToken', data.data.token)
+				this.props.liftUser({
+				firstName: data.data.user.firstName,
+				lastName: data.data.user.lastName,
+				email: data.data.user.email,
+				userName: data.data.user.userName,
+				userId: data.data.user.id,
+				})
+				this.setState({
+					redirect: true,
+					location: '/'
+				})
+			}else{
+				M.toast({classes: 'red',html: 'Incorrect email/password, please try again'})
+			}
+		})
 	}
 
 	render() {
-		console.log(this.props)
+		const { redirect } = this.state;
+
+		if(redirect){
+			return <Redirect to={this.state.location} />
+		}
 		return(
 			<Row>
 				<div className='col s8 offset-s2 login'>
 					<h4> Log In! </h4>
 					<hr />
 					<form>
-						<Input type="email" label="Email" s={12}/>
+						<Input type="email" label="Email" s={12} onChange={this.emailChange}/>
 						<br />
-						<Input type="password" label="Password" s={12}/>
+						<Input type="password" label="Password" s={12} onChange={this.passwordChange}/>
 						<a className='btn waves-effect waves-light yellow darken-2 col s4 offset-s4' onClick={this.submit}>Log In!</a>
 					</form>
 				</div>

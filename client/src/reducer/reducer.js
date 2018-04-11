@@ -1,4 +1,4 @@
-import {LIFT_USER} from '../action/actions'
+import {LIFT_USER, LOGOUT} from '../action/actions'
 const initialState = {
   userId: '',
   firstName: '',
@@ -19,6 +19,18 @@ function userApp(state = initialState, action){
                     lastName: action.data.lastName,
                     userName: action.data.userName,
                     email: action.data.email
+                })
+            )
+
+        case LOGOUT:
+            return(
+                console.log("LOGOUT reducer fired"),
+                Object.assign({}, state, {
+                    userId: '',
+                    firstName: '',
+                    lastName: '',
+                    userName: '',
+                    email: '',
                 })
             )
         default:

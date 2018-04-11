@@ -76,6 +76,7 @@ class Signup extends Component {
 				email: data.data.user.email,
 				userName: data.data.user.userName,
 				userId: data.data.user.id,
+				memberSince: data.data.user.createdAt
 				})
 			}else{
 				M.toast({classes: 'red',html: data.data})

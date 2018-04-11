@@ -49,7 +49,7 @@ class Login extends Component {
 		}).then((data)=>{
 			console.log(data.data.user)
 			if(data.data.user){
-				// M.toast({classes: 'green', html: 'Log in successful!'})
+				window.Materialize.toast("Logged in successfully!", 3000, 'green')
 				localStorage.setItem('snapbookToken', data.data.token)
 				this.props.liftUser({
 				firstName: data.data.user.firstName,
@@ -64,7 +64,7 @@ class Login extends Component {
 					location: '/'
 				})
 			}else{
-				// M.toast({classes: 'red',html: 'Incorrect email/password, please try again'})
+				window.Materialize.toast("Incorrect email/password, please try again!", 3000, 'red')
 			}
 		})
 	}

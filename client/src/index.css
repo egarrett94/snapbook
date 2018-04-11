@@ -137,6 +137,10 @@ p {
 	margin-top: 50px;
 }
 
+.signup {
+	height: 90vh;
+}
+
 .collections-page h3 {
 	margin-left: 40px;
 	color: #FF5D46;
@@ -388,7 +392,6 @@ hr {
 	border-radius: 50%;
 }
 
-
 .mostly-human-developer {
 	width: 250px;
 	height: 250px;
@@ -403,4 +406,17 @@ hr {
 	margin: 0 4px;
 }
 
+.about-opener {
+	background-color: #2BB272;
+}
+
+.about-names {
+	color: #FF5D46;
+}
+
+@media(min-width: 993px) {
+	.brand-logo {
+		margin-left: 15px;
+	}
+}
 

@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 import {Redirect} from 'react-router-dom'
-import {Row, Input} from 'react-materialize';
+import {Row, Input, Toast} from 'react-materialize';
 import {connect} from 'react-redux'
 import {liftUser} from './action/actions'
 import axios from 'axios'
@@ -68,7 +68,7 @@ class Signup extends Component {
 		}).then( data => {
 			if(data.data.user){
 				console.log(data.data.user.userName)
-				// M.toast({classes: 'green', html: 'Account Created and Logged in!'})
+				window.Materialize.toast("Account Created and Logged In!", 3000, 'green')
 				localStorage.setItem('snapbookToken', data.data.token)
 				this.props.liftUser({
 				firstName: data.data.user.firstName,
@@ -79,7 +79,7 @@ class Signup extends Component {
 				memberSince: data.data.user.createdAt
 				})
 			}else{
-				// M.toast({classes: 'red',html: data.data})
+				window.Materialize.toast(data.data, 3000, 'red')
 				this.setState({
 					redirect: true,
 					location: '/login'

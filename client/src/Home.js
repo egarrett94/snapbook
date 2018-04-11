@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import {connect} from 'react-redux'
 import {liftUser} from './action/actions'
 import axios from 'axios'
+import { Redirect, Route, Link } from 'react-router-dom';
 
 const mapStateToProps = state => {
 	return{ state }
@@ -9,7 +10,7 @@ const mapStateToProps = state => {
 
 const mapDispatchToProps = dispatch => {
 	return{
-			liftUser: (userInfo) => dispatch(liftUser(userInfo)),
+		liftUser: (userInfo) => dispatch(liftUser(userInfo)),
 	}
 }
 
@@ -38,6 +39,10 @@ class Home extends Component {
 	}
 
 	render() {
+		let {userId} = this.props.state
+		let getStarted = userId ? 
+			<Link className='btn-large waves-effect waves-light z-depth-3 opener-button' to='/collections'>Get Started!</Link> 
+			: <Link className='btn-large waves-effect waves-light z-depth-3 opener-button' to='/login'>Get Started!</Link>
 		console.log(this.props.state)
 		return(
 				<div className='mobile-screen'>
@@ -47,7 +52,7 @@ class Home extends Component {
 						   		<h2>Share the love.</h2>
 						   		<h5>Make your memories magical with our free layouts!</h5>
 						   		<br/>
-						   		<a className='btn-large waves-effect waves-light z-depth-3 opener-button'>Get Started!</a>
+						   		{getStarted}
 						   	</div>
 					   </div>
 					</div>

@@ -13,7 +13,6 @@ import Login from './Login';
 import Signup from "./Signup";
 import Collections from './Collections';
 import Profile from './Profile';
-import CelebrationLayout from './CelebrationLayout';
 
 
 class App extends Component {

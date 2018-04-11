@@ -4,6 +4,7 @@ const initialState = {
   firstName: '',
   lastName: '',
   userName: '',
+  email: '',
   temp: ''
 }
 
@@ -16,7 +17,8 @@ function userApp(state = initialState, action){
                     userId: action.data.userId,
                     firstName: action.data.firstName,
                     lastName: action.data.lastName,
-                    userName: action.data.userName
+                    userName: action.data.userName,
+                    email: action.data.email
                 })
             )
         default:

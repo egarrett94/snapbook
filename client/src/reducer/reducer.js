@@ -5,7 +5,8 @@ const initialState = {
   lastName: '',
   userName: '',
   email: '',
-  temp: ''
+  temp: '',
+  createdAt: '',
 }
 
 function userApp(state = initialState, action){
@@ -18,7 +19,8 @@ function userApp(state = initialState, action){
                     firstName: action.data.firstName,
                     lastName: action.data.lastName,
                     userName: action.data.userName,
-                    email: action.data.email
+                    email: action.data.email,
+                    memberSince: action.data.createdAt
                 })
             )
 

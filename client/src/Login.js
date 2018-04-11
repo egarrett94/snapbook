@@ -47,6 +47,7 @@ class Login extends Component {
 			email: this.state.email,
 			password: this.state.password
 		}).then((data)=>{
+			console.log(data.data.user)
 			if(data.data.user){
 				M.toast({classes: 'green', html: 'Log in successful!'})
 				localStorage.setItem('snapbookToken', data.data.token)
@@ -56,6 +57,7 @@ class Login extends Component {
 				email: data.data.user.email,
 				userName: data.data.user.userName,
 				userId: data.data.user.id,
+
 				})
 				this.setState({
 					redirect: true,

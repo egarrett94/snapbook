@@ -5,6 +5,12 @@ import UserPhoto from './UserPhoto';
 import {Carousel} from 'react-materialize';
 // import M from 'materialize-css';
 
+import BasicLayoutImg from './basiclayoutthumbnail.png';
+import DogLayoutImg from './doglayoutthumbnail.png';
+import CelebrationLayoutImg from './celebrationlayoutthumbnail.png';
+import GraphicDesignLayoutImg from './graphicdesignlayoutthumbnail.png';
+import SunflowerLayoutImg from './sunflowerlayoutthumbnail.png';
+
 //the layout_id in the carousel div inputs are what will determine which layout renders
 
 class Collections extends Component {
@@ -38,22 +44,34 @@ class Collections extends Component {
 						<h3>STEP ONE: </h3>
 						<p className='center grey-text lighten-2'>Pick one of our great layouts!</p>
 						<Carousel className='carousel'>
-							<div className='blue-grey center z-depth-5'>
-							    <h5>First Layout</h5>
+							<div className='yellow darken-2 center z-depth-5'>
+							    <h5>Basic Layout</h5>
+							    <img src={BasicLayoutImg} alt='basic layout' />
 							    <input type="radio" id='layout_id' className='filled-in radio-yellow' name="layout" />
-							 
 							    <label htmlFor='layout_id'>Select</label>
 							  </div>
-							  <div className='blue-grey lighten-3 center z-depth-5'>
-							    <h5>Second Layout</h5>
+							  <div className='yellow darken-2 center z-depth-5'>
+							    <h5>Celebration Layout</h5>
+							    <img src={CelebrationLayoutImg} alt='dog layout' />
 							    <input type="radio" id='layout_id' className='filled-in radio-yellow' name="layout" />
-							 
 							    <label htmlFor='layout_id'>Select</label>
 							  </div>
-							  <div className='blue-grey lighten-1 center z-depth-5'>
-							    <h5>Third Layout</h5>
+							  <div className='yellow darken-2 center z-depth-5'>
+							    <h5>Dog Layout</h5>
+								<img src={DogLayoutImg} alt='dog layout' />
 							    <input type="radio" id='layout_id' className='filled-in radio-yellow' name="layout" />
-							 
+							    <label htmlFor='layout_id'>Select</label>
+							  </div>
+							  <div className='yellow darken-2 center z-depth-5'>
+							    <h5>Perfect Layout</h5>
+								<img src={GraphicDesignLayoutImg} alt='perfect layout' />
+							    <input type="radio" id='layout_id' className='filled-in radio-yellow' name="layout" />
+							    <label htmlFor='layout_id'>Select</label>
+							  </div>
+							  <div className='yellow darken-2 center z-depth-5'>
+							    <h5>Sunflower Layout</h5>
+								<img src={SunflowerLayoutImg} alt='sunflower layout' />
+							    <input type="radio" id='layout_id' className='filled-in radio-yellow' name="layout" />
 							    <label htmlFor='layout_id'>Select</label>
 							  </div>
 						</Carousel>
@@ -86,7 +104,7 @@ class Collections extends Component {
 						<h3>STEP THREE: </h3>
 						<p className='center grey-text lighten-2'>Name it and let us build your SnapBook!
 						<br />
-						<i className="material-icons large opener-icons">insert_photo</i></p>
+						<i className="material-icons large opener-icons collections">insert_photo</i></p>
 						<Input type="text" label="Name of SnapBook" s={12} icon='add_to_photos'/>
 
 						<input type='submit' className='btn-large waves-effect waves-light yellow darken-2 col s12' name='submit'/>

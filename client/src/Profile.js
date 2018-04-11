@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import {Redirect} from 'react-router-dom'
+import {Redirect, Link} from 'react-router-dom'
 import { connect } from 'react-redux';
 // import M from 'materialize-css'
 const mapStateToProps = state => {
@@ -62,7 +62,7 @@ class Profile extends Component {
 							<li> Link to a fuckin snapbook </li>
 							<li> Link to a fuckin snapbook </li>
 						</ul>
-						<a href='/collections' className='btn waves-effect waves-light yellow darken-2 z-depth-3'>Make a SnapBook!</a>
+						<Link to='/collections' className='btn waves-effect waves-light yellow darken-2 z-depth-3'>Make a SnapBook!</Link>
 
 					</div>
 				</div>

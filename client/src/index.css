@@ -25,6 +25,16 @@ p {
 	color: #525252;
 }
 
+.carousel {
+	height: 500px!important;
+	margin-top: -75px!important;
+	margin-bottom: 10px;
+}
+
+.carousel-item {
+	margin-top: -50px;
+}
+
 .nav-wrapper {
 	height: 90px;
 	background-color: #57FFAF;
@@ -77,6 +87,10 @@ p {
 .opener-boys {
 	margin-bottom: 0;
 }
+ 
+.opener-icons.collections {
+	color: grey;
+}
 
 .opener-icons {
 	margin-top: 20px;
@@ -109,6 +123,10 @@ p {
 		z-index: 5;
 		overflow: scroll;
 		height: 100vh;
+	}
+
+	.opener-boys p {
+		color: white;
 	}
 
 	.opener-icons {
@@ -146,6 +164,11 @@ p {
 	color: #FF5D46;
 	text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
 	text-decoration: underline;
+}
+
+.collections-page h5 {
+	color: white;
+	text-shadow: 1px 1px 2px grey;
 }
 
 .individual-photo {
@@ -208,14 +231,14 @@ hr {
 }
 
 .basic-layout-photo-frame, .dog-layout-photo-frame {
-	height: 200px;
+	height: 25vh;
 	width: 30vw;
 	overflow: hidden;
 	margin: 0 auto;
 }
 
 .basic-layout-photo-frame-mid, .dog-layout-photo-frame-mid {
-	height: 300px;
+	height: 30vh;
 	width: 50vw;
 	margin: 0 auto;
 	overflow: hidden;
@@ -279,7 +302,7 @@ hr {
 	box-sizing:border-box;
 	display:inline-block;
 	margin:10vh 10vw;
-	height:80vh;
+	height:100%;
 	padding:8vmin;
 	position:relative;
 	text-align:center;

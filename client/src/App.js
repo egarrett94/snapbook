@@ -16,8 +16,6 @@ import Profile from './Profile';
 import DogLayout from './DogLayout';
 
 
-
-
 class App extends Component {
   render() {
     return (

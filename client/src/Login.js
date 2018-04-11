@@ -1,4 +1,5 @@
 import React, {Component} from 'react';
+import axios from 'axios'
 import {connect} from 'react-redux'
 import {liftUser} from './action/actions'
 import {Row, Input} from 'react-materialize';
@@ -20,13 +21,19 @@ class Login extends Component {
 	}
 	submit(e){
 		e.preventDefault()
-		var data = {
-			userId: 'test',
-			firstName: "kyle",
-			lastName: "Van Bergen",
-			userName: "butts"
-		}
-		this.props.liftUser(data)
+		axios.post('/auth/login', {
+			test: 'test'
+		}).then((data)=>{
+			console.log('stuff')
+			console.log(data)
+		  })
+		// var data = {
+		// 	userId: 'test',
+		// 	firstName: "kyle",
+		// 	lastName: "Van Bergen",
+		// 	userName: "butts"
+		// }
+		// this.props.liftUser(data)
 	}
 
 	render() {

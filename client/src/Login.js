@@ -82,7 +82,7 @@ class Login extends Component {
 						<Input type="email" label="Email" s={12} onChange={this.emailChange}/>
 						<br />
 						<Input type="password" label="Password" s={12} onChange={this.passwordChange}/>
-						<a className='btn waves-effect waves-light yellow darken-2 col s4 offset-s4' onClick={this.submit}>Log In!</a>
+						<button type='submit' className='btn waves-effect waves-light yellow darken-2 col s4 offset-s4' onClick={this.submit}>Log In!</button>
 					</form>
 				</div>
 			</Row>

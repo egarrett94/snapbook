@@ -3,7 +3,7 @@ import React, {Component} from 'react';
 import {Navbar} from 'react-materialize';
 import M from 'materialize-css'
 import {userLogout} from './action/actions'
-import { Redirect, Link } from 'react-router-dom';
+import { Redirect, Route, Link } from 'react-router-dom';
 import { connect } from 'react-redux';
 
 const mapStateToProps = state => {
@@ -48,18 +48,23 @@ class Nav extends Component {
 		let {userId} = this.props.state
 		if(redirect){
 			console.log('test')
-			return <Redirect to={this.state.location} />
+			
+			return (
+				<Nav />,
+				<Redirect to={{
+					pathname: this.state.location
+				}} />
+			)
 		}
 		let login = userId ? <Link to='/logout' onClick={this.logout}>Log Out</Link> : <Link to='/login'>Login</Link>
 		let profile = userId ? <Link to='/profile'>Profile</Link> : <Link to='/signup'>Signup</Link>
 		return (
 			<div>
 				<Navbar brand='SnapBook'  right>
-
-					<li>{login}</li>
 					<li><Link to='/'>Home</Link></li>
-					<li>{profile}</li>
 					<li><Link to='/collections'>Collections</Link></li>
+					<li>{profile}</li>
+					<li>{login}</li>
 
 				</Navbar>
 			</div>

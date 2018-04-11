@@ -10,7 +10,7 @@ const mapStateToProps = state => {
 
 const mapDispatchToProps = dispatch => {
 	return{
-			liftUser: (userInfo) => dispatch(liftUser(userInfo)),
+		liftUser: (userInfo) => dispatch(liftUser(userInfo)),
 	}
 }
 
@@ -40,7 +40,9 @@ class Home extends Component {
 
 	render() {
 		let {userId} = this.props.state
-		let getStarted = userId ? <Link className='btn-large waves-effect waves-light z-depth-3 opener-button' to='/collections'>Get Started!</Link> : <Link className='btn-large waves-effect waves-light z-depth-3 opener-button' to='/login'>Get Started!</Link>
+		let getStarted = userId ? 
+			<Link className='btn-large waves-effect waves-light z-depth-3 opener-button' to='/collections'>Get Started!</Link> 
+			: <Link className='btn-large waves-effect waves-light z-depth-3 opener-button' to='/login'>Get Started!</Link>
 		console.log(this.props.state)
 		return(
 				<div className='mobile-screen'>

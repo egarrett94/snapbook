@@ -16,7 +16,7 @@ class Home extends Component {
 						   		<h2>Share the love.</h2>
 						   		<h5>Make your memories magical with our free layouts!</h5>
 						   		<br/>
-						   		<a className='btn-large waves-effect waves-light yellow darken-2 z-depth-3'>Get Started!</a>
+						   		<a className='btn-large waves-effect waves-light z-depth-3 opener-button'>Get Started!</a>
 						   	</div>
 					   </div>
 					</div>

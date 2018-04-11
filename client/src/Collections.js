@@ -17,19 +17,19 @@ class Collections extends Component {
 						<h3>STEP ONE: </h3>
 						<p className='center grey-text lighten-2'>Pick one of our great layouts!</p>
 						<Carousel>
-							<div className='blue-grey center'>
+							<div className='blue-grey center z-depth-5'>
 							    <h5>First Layout</h5>
 							    <input type="radio" id='layout_id' className='filled-in radio-yellow' name="layout" />
 							 
 							    <label htmlFor='layout_id'>Select</label>
 							  </div>
-							  <div className='blue-grey lighten-3 center'>
+							  <div className='blue-grey lighten-3 center z-depth-5'>
 							    <h5>Second Layout</h5>
 							    <input type="radio" id='layout_id' className='filled-in radio-yellow' name="layout" />
 							 
 							    <label htmlFor='layout_id'>Select</label>
 							  </div>
-							  <div className='blue-grey lighten-1 center'>
+							  <div className='blue-grey lighten-1 center z-depth-5'>
 							    <h5>Third Layout</h5>
 							    <input type="radio" id='layout_id' className='filled-in radio-yellow' name="layout" />
 							 

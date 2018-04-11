@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
+import {Redirect} from 'react-router-dom'
 import { connect } from 'react-redux';
-
+import M from 'materialize-css'
 const mapStateToProps = state => {
   return{ state }
 }
@@ -8,9 +9,31 @@ const mapStateToProps = state => {
 // <p><span className='intro-words'>Member Since: </span>{this.props.state.memberSince}</p>
 
 class Profile extends Component {
+	constructor(props){
+		super(props)
+		this.state={
+			redirect: false,
+			location: ''
+		}
+		this.auth = this.auth.bind(this)
+	}
+
+	auth(){
+		this.setState({
+			redirect: true,
+			location: '/signup'
+		})
+	}
 
 	render() {
-		
+		let { redirect } = this.state
+		if(redirect){
+			return <Redirect to={this.state.location} />
+		}
+		if(!this.props.state.userName){
+			M.toast({classes: 'red', html: 'Please Login to access this page.'})
+			this.auth()
+		}
 		return(
 			<div className='profile-page'>
 

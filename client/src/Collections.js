@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
 import {Input} from 'react-materialize';
+import axios from 'axios';
 import UserPhoto from './UserPhoto';
 import {Carousel} from 'react-materialize';
 import M from 'materialize-css'
@@ -7,6 +8,18 @@ import M from 'materialize-css'
 //the layout_id in the carousel div inputs are what will determine which layout renders
 
 class Collections extends Component {
+	constructor(props){
+		super(props)
+
+		this.submit = this.submit.bind(this)
+	}
+
+	submit(e){
+		e.preventDefault()
+		axios.post('/collections').then((data)=>{
+			console.log(data)
+		})
+	}
 
 	render() {
 		return(
@@ -41,8 +54,16 @@ class Collections extends Component {
 
 						<h3>STEP TWO: </h3>
 						<p className='center grey-text lighten-2'>Pick your photos!</p>
-						<a className='btn waves-effect waves-light grey lighten-2 col s4 offset-s4 grey-text text-darken-3 z-depth-4'>Upload Photos</a>
-						
+						<a className='btn waves-effect waves-light grey lighten-2 col s4 offset-s4 grey-text text-darken-3 z-depth-4 modal-trigger' href='#submitPhoto'>Upload Photos</a>
+						<div id="submitPhoto" className="modal">
+							<div className="modal-content">
+								<h4>Modal Header</h4>
+								<p>A bunch of text</p>
+							</div>
+							<div className="modal-footer">
+								<a href="#!" className="modal-action modal-close waves-effect waves-green btn-flat">Agree</a>
+							</div>
+						</div>
 						<br /><br />
 
 						<div className='photos-display row'>

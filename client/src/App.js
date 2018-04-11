@@ -13,15 +13,16 @@ import Login from './Login';
 import Signup from "./Signup";
 import Collections from './Collections';
 import Profile from './Profile';
-import DogLayout from './DogLayout';
-
-
+import CelebrationLayout from './CelebrationLayout';
 
 
 class App extends Component {
   render() {
     return (
-      <Router>
+
+
+     <Router>
+
         <div>
           <Nav/>
           <Route exact path ='/' render={() => <Home />} />
@@ -31,6 +32,7 @@ class App extends Component {
           <Footer />
         </div>
       </Router>
+
     );
   }
 }

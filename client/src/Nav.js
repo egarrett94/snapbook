@@ -15,11 +15,13 @@ class Nav extends Component {
 		let login = userId ? <Link to='/logout'>Log Out</Link> : <Link to='/login'>Log In</Link>
 		return (
 			<div>
-				<Navbar brand='SnapBook' className='purple darken-3' right>
-					{login}
-					<Link to='/'>Home</Link>
-					<Link to='/signup'>Signup</Link> 
-					<Link to='/collections'>Collections</Link> 
+				<Navbar brand='SnapBook'  right>
+
+					<li>{login}</li>
+					<li><Link to='/'>Home</Link></li>
+					<li><Link to='/signup'>Signup</Link></li>
+					<li><Link to='/collections'>Collections</Link></li>
+
 				</Navbar>
 			</div>
 		)

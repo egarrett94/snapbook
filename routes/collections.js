@@ -14,6 +14,7 @@ cloudinary.config({
 })
 
 router.post('/', upload.single("myFile"), (req, res) =>{
+    console.log('here')
     var newPicUrl = ''
     console.log(req.file)
     cloudinary.uploader.upload(req.file.path, (result) => {
@@ -26,7 +27,7 @@ router.post('/', upload.single("myFile"), (req, res) =>{
             db.photo.findAll({
                 where:{user_id: req.body.userId}
             }).then(data =>{
-                res.status(200).send('All Good')
+                res.redirect('/collections')
             })
         })
     }) 

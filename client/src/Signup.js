@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 import {Redirect} from 'react-router-dom'
-import {Row, Input, Toast} from 'react-materialize';
+import {Row, Input} from 'react-materialize';
 import {connect} from 'react-redux'
 import {liftUser} from './action/actions'
 import axios from 'axios'

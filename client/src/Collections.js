@@ -1,5 +1,7 @@
 import React, {Component} from 'react';
+import {liftUser} from './action/actions'
 import {Input, Modal, Button} from 'react-materialize';
+import {Redirect} from 'react-router-dom'
 import axios from 'axios';
 import UserPhoto from './UserPhoto';
 import {Carousel} from 'react-materialize';
@@ -18,47 +20,82 @@ const mapStateToProps = state => {
 	return{ state }
   }
 
+const mapDispatchToProps = dispatch => {
+	return{
+		liftUser: (userInfo) => dispatch(liftUser(userInfo)),
+	}
+}
 class Collections extends Component {
 	constructor(props){
 		super(props)
 		this.state={
-			pictures: []
+			pictures: [],
+			redirect: false,
+			location: ''
 		}
-		this.submitNewOPhoto = this.submitNewOPhoto.bind(this)
-	}
-
-	submitNewOPhoto(e){
-		e.preventDefault()
-		console.log(e.target)
-		// axios.post('/collections',{
-
-		// }).then((data)=>{
-		// 	console.log(data)
-		// })
 	}
 
 	componentDidMount() {
-		if(this.props.state.userId){
-			axios.post('/collections/index',{
-				userId: this.props.state.userId
-			}).then(data => {
-				this.setState({
-					pictures: data.data
-				})
+		var token = localStorage.getItem('snapbookToken')
+		if(token === 'undefined' || token === null || token === '' || token === undefined){
+			localStorage.removeItem('snapbookToken')
+		}else{
+			if(!this.props.state.userName && token){
+				axios.post('/auth/me/from/token', {
+					token: token
+      			}).then(data =>{
+					this.props.liftUser({
+						firstName: data.data.firstName,
+						lastName: data.data.lastName,
+						email: data.data.email,
+						userName: data.data.userName,
+						userId: data.data.id,
+						})
+				  }).then(data =>{
+					if(this.props.state.userId){
+						axios.post('/collections/index',{
+							userId: this.props.state.userId
+						}).then(data => {
+							this.setState({
+								pictures: data.data
+							})
+						})
+					}
+				  })
+			}else{
+				if(this.props.state.userId){
+					axios.post('/collections/index',{
+						userId: this.props.state.userId
+					}).then(data => {
+						this.setState({
+							pictures: data.data
+						})
+					})
+				}
+			}
+		}
+		if(!this.props.state.userId){
+			window.Materialize.toast("Please Login First!", 3000, 'red')
+			this.setState({
+				redirect: true,
+				location: '/'
 			})
 		}
 	}
 
 	render() {
-		console.log(this.state)
+		const { redirect } = this.state;
+		if(redirect){
+			return <Redirect to={this.state.location} />
+		}
 		let collection = this.state.pictures.map((butt, i) =>
 			<UserPhoto src={butt.url} key={i} count={butt.id} />)
 		let subPhotoModal = this.props.state.userId ? 
 			<div>
-				<form encType="multipart/form-data">
+				<form encType="multipart/form-data" action="/collections" method="POST">
 					<input type="file" name="myFile" />
 					<input type="hidden" value={this.props.state.userId} name='userId' />
-					<input type="submit" className="btn btn-primary" onClick={this.submitNewOPhoto}/>
+					<input type="submit" className="btn btn-primary" />
 				</form>
 			</div>
 		 : 
@@ -139,4 +176,4 @@ class Collections extends Component {
 
 }
 
-export default connect(mapStateToProps)(Collections);
+export default connect(mapStateToProps, mapDispatchToProps)(Collections);

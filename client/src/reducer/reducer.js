@@ -13,7 +13,6 @@ function userApp(state = initialState, action){
     switch(action.type){
         case LIFT_USER: 
             return(
-                console.log("LIFT_USER reducer fired", action.data),
                 Object.assign({}, state, {
                     userId: action.data.userId,
                     firstName: action.data.firstName,
@@ -26,7 +25,6 @@ function userApp(state = initialState, action){
 
         case LOGOUT:
             return(
-                console.log("LOGOUT reducer fired"),
                 Object.assign({}, state, {
                     userId: '',
                     firstName: '',

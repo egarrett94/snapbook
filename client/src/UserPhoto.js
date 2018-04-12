@@ -8,12 +8,15 @@ import React, {Component} from 'react';
 class UserPhoto extends Component {
 
 	render() {
+		let imgLink = '/collection/' + this.props.count
 		return (
 			<div className='individual-photo center'>
-				<img src={this.props.src} alt='kitty'/>
-				<br/>
-				<input type="checkbox" id={this.props.count} className='filled-in checkbox-yellow' name="photo" />
-				<label htmlFor={this.props.count} ></label>
+				<a href={imgLink}>
+					<img src={this.props.src} alt='kitty'/>
+					<br/>
+					<input type="checkbox" id={this.props.count} className='filled-in checkbox-yellow' name="photo" />
+					<label htmlFor={this.props.count} ></label>
+				</a>
 			</div>
 		)
 	}

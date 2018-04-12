@@ -3,6 +3,7 @@ import {Redirect, Link} from 'react-router-dom'
 import { connect } from 'react-redux';
 import UserInfo from './UserInfo';
 
+
 const mapStateToProps = state => {
   return{ state }
 }
@@ -15,10 +16,9 @@ class Profile extends Component {
 		this.state={
 			redirect: false,
 			location: '',
-			isEditing: false
 		}
 		this.auth = this.auth.bind(this)
-		this.toggleEdit = this.toggleEdit.bind(this)
+		this.clamburglar = this.clamburglar.bind(this)
 
 	}
 
@@ -29,11 +29,9 @@ class Profile extends Component {
 		})
 	}
 
-	toggleEdit(e) {
-		e.preventDefault()
-		console.log('editing')
+	clamburglar() {
 		this.setState({
-			isEditing: !this.state.isEditing
+
 		})
 	}
 
@@ -57,9 +55,8 @@ class Profile extends Component {
 					userName={this.props.state.userName} 
 					firstName={this.props.state.firstName}
 					lastName={this.props.state.lastName}
-					email={this.props.state.email} 
-					toggleEdit={this.toggleEdit}
-					isEditing={this.state.isEditing}
+					email={this.props.state.email}
+					clamburglar={this.clamburglar}
 				/>
 
 				<div className='row collections-display'>

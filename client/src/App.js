@@ -14,6 +14,7 @@ import Signup from "./Signup";
 import Collections from './Collections';
 import Profile from './Profile';
 import AboutUs from './AboutUs';
+import UserInfo from './UserInfo'
 
 
 const mapStateToProps = state => {
@@ -33,6 +34,7 @@ class App extends Component {
           <Route path='/collections' render={() => <Collections />} />
           <Route path='/profile' render={() => <Profile />} />
           <Route path='/about' render={() => <AboutUs />} />
+          <Route path='/profile/edit' render={() => <UserInfo />} />
           <Footer />
         </div>
       </Router>

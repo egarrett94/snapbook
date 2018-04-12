@@ -3,7 +3,7 @@ import React, {Component} from 'react';
 import {Navbar} from 'react-materialize';
 // import M from 'materialize-css'
 import {userLogout} from './action/actions'
-import { Redirect, Route, Link } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
 
 

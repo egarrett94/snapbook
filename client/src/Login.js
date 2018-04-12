@@ -57,7 +57,6 @@ class Login extends Component {
 				email: data.data.user.email,
 				userName: data.data.user.userName,
 				userId: data.data.user.id,
-
 				})
 				this.setState({
 					redirect: true,

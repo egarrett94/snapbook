@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import {connect} from 'react-redux'
 import {liftUser} from './action/actions'
 import axios from 'axios'
-import { Redirect, Route, Link } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 
 const mapStateToProps = state => {
 	return{ state }
@@ -17,12 +17,12 @@ const mapDispatchToProps = dispatch => {
 class Home extends Component {
 
 	componentDidMount(){
+		
 		var token = localStorage.getItem('snapbookToken')
 		if(token === 'undefined' || token === null || token === '' || token === undefined){
 			localStorage.removeItem('snapbookToken')
 		}else{
 			if(!this.props.state.userName && token){
-				console.log('legit')
 				axios.post('/auth/me/from/token', {
 					token: token
       			}).then(data =>{
@@ -43,7 +43,6 @@ class Home extends Component {
 		let getStarted = userId ? 
 			<Link className='btn-large waves-effect waves-light z-depth-3 opener-button' to='/collections'>Get Started!</Link> 
 			: <Link className='btn-large waves-effect waves-light z-depth-3 opener-button' to='/login'>Get Started!</Link>
-		console.log(this.props.state)
 		return(
 				<div className='mobile-screen'>
 				   <div className='row hero-row'>

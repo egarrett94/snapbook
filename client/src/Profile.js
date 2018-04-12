@@ -20,7 +20,7 @@ class Profile extends Component {
 	auth(){
 		this.setState({
 			redirect: true,
-			location: '/signup'
+			location: '/login'
 		})
 	}
 
@@ -30,7 +30,7 @@ class Profile extends Component {
 			return <Redirect to={this.state.location} />
 		}
 		if(!this.props.state.userName){
-			window.Materalize.toast("Please log in to access this page.", 'red', 3000)
+			//window.Materalize.toast("Please log in to access this page.", 'red', 3000)
 			this.auth()
 		}
 		return(

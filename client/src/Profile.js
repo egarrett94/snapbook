@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import {Redirect, Link} from 'react-router-dom'
 import { connect } from 'react-redux';
+import UserInfo from './UserInfo';
+
 const mapStateToProps = state => {
   return{ state }
 }
@@ -12,9 +14,12 @@ class Profile extends Component {
 		super(props)
 		this.state={
 			redirect: false,
-			location: ''
+			location: '',
+			isEditing: false
 		}
 		this.auth = this.auth.bind(this)
+		this.toggleEdit = this.toggleEdit.bind(this)
+
 	}
 
 	auth(){
@@ -24,32 +29,39 @@ class Profile extends Component {
 		})
 	}
 
+	toggleEdit(e) {
+		e.preventDefault()
+		console.log('editing')
+		this.setState({
+			isEditing: !this.state.isEditing
+		})
+	}
+
 	render() {
 		let { redirect } = this.state
+
 		if(redirect){
 			return <Redirect to={this.state.location} />
 		}
+
 		if(!this.props.state.userName){
 			//window.Materalize.toast("Please log in to access this page.", 'red', 3000)
 			this.auth()
 		}
+
 		return(
 			<div className='profile-page'>
+			
 
-				<div className='row user-info'>
-					<div className='col s12 m8 offset-m2 center'>
-						<h4>Welcome, {this.props.state.firstName}.</h4>
-						<div className='profile-pic-frame'>
-							<img src='https://media.gq.com/photos/56f29061174084154974ba05/3:2/w_560/Gwen-stefani-wcw-3x2%202.jpg' className='profile-pic' alt='gwennygwengwen'/>
-						</div>
-						<a href='/profile/edit' className='grey-text'>Edit Info</a>
-						<p><span className='intro-words'>Username: </span>{this.props.state.userName}</p>
-						<p><span className='intro-words'>Name: </span>{this.props.state.firstName} {this.props.state.lastName}</p>
-						<p><span className='intro-words'>Email: </span>{this.props.state.email}</p>
-						
-						<hr />
-					</div>
-				</div>
+				<UserInfo 
+					userName={this.props.state.userName} 
+					firstName={this.props.state.firstName}
+					lastName={this.props.state.lastName}
+					email={this.props.state.email} 
+					toggleEdit={this.toggleEdit}
+					isEditing={this.state.isEditing}
+				/>
+
 				<div className='row collections-display'>
 					<div className='col s12 m8 offset-m2 center'>
 						<h4>Your SnapBooks</h4>

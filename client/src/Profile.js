@@ -18,7 +18,6 @@ class Profile extends Component {
 			location: '',
 		}
 		this.auth = this.auth.bind(this)
-		this.clamburglar = this.clamburglar.bind(this)
 
 	}
 
@@ -26,12 +25,6 @@ class Profile extends Component {
 		this.setState({
 			redirect: true,
 			location: '/login'
-		})
-	}
-
-	clamburglar() {
-		this.setState({
-
 		})
 	}
 
@@ -56,7 +49,6 @@ class Profile extends Component {
 					firstName={this.props.state.firstName}
 					lastName={this.props.state.lastName}
 					email={this.props.state.email}
-					clamburglar={this.clamburglar}
 				/>
 
 				<div className='row collections-display'>

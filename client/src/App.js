@@ -14,7 +14,7 @@ import Signup from "./Signup";
 import Collections from './Collections';
 import Profile from './Profile';
 import AboutUs from './AboutUs';
-import UserInfo from './UserInfo'
+import UserInfo from './UserInfo';
 
 
 const mapStateToProps = state => {

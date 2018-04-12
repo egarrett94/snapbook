@@ -9,7 +9,7 @@ const mapStateToProps = state => {
 }
 const mapDispatchToProps = dispatch => {
 	return{
-		  liftUser: (userInfo) => dispatch(liftUser(userInfo)),
+		liftUser: (userInfo) => dispatch(liftUser(userInfo)),
 	}
   }
 //on each input, lift to local state 
@@ -21,7 +21,7 @@ class UserInfo extends Component {
 		super(props)
 
 		this.state={
-			isEditing:false,
+			isEditing: false,
 			firstNameEdit: '',
 			lastNameEdit: '',
 			userNameEdit: '',
@@ -150,7 +150,7 @@ class UserInfo extends Component {
 					<div className='profile-pic-frame'>
 						<img src='https://media.gq.com/photos/56f29061174084154974ba05/3:2/w_560/Gwen-stefani-wcw-3x2%202.jpg' className='profile-pic' alt='gwennygwengwen'/>
 					</div>
-					<a className='grey-text' onClick={this.toggleEdit}><Link to='/profile/edit'>Edit</Link></a>
+					<Link className='grey-text' to='/profile/edit' onClick={this.toggleEdit}>Edit</Link>
 					<p><span className='intro-words'>Username: </span>{this.props.userName}</p>
 					<p><span className='intro-words'>Name: </span>{this.props.firstName} {this.props.lastName}</p>
 					<p><span className='intro-words'>Email: </span>{this.props.email}</p>

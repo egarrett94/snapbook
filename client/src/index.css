@@ -443,3 +443,12 @@ hr {
 	}
 }
 
+.user-info:nth-child(2) {
+	display:none!important;
+}
+
+
+
+
+
+

@@ -30,9 +30,16 @@ class Collections extends Component {
 		super(props)
 		this.state={
 			pictures: [],
+			template: 0,
+			bookTitle: '',
+			selectedPics: [],
 			redirect: false,
 			location: ''
 		}
+		this.gatherPics = this.gatherPics.bind(this)
+		this.gatherTemplate = this.gatherTemplate.bind(this)
+		this.submitBook = this.submitBook.bind(this)
+		this.gatherTitle = this.gatherTitle.bind(this)
 	}
 
 	componentDidMount() {
@@ -83,25 +90,52 @@ class Collections extends Component {
 		}
 	}
 
+	gatherTemplate(e){
+		this.setState({
+			template: e.target.id
+		}, ()=> {
+			console.log('state: ', this.state.template)
+		})
+	}
+
+	gatherPics(data){
+		var newArray = this.state.selectedPics.concat(data)
+		this.setState({
+			selectedPics: newArray
+		})
+	}
+
+	gatherTitle(e){
+		this.setState({
+			bookTitle: e.target.value
+		})
+	}
+
+	submitBook(e){
+		e.preventDefault()
+		console.log(this.state)
+	}
+
 	render() {
 		const { redirect } = this.state;
 		if(redirect){
 			return <Redirect to={this.state.location} />
 		}
 		let collection = this.state.pictures.map((butt, i) =>
-			<UserPhoto src={butt.url} key={i} count={butt.id} />)
+			<UserPhoto src={butt.url} key={'img'+i} count={butt.id} click={this.gatherPics} />)
 		let subPhotoModal = this.props.state.userId ? 
-			<div>
-				<form encType="multipart/form-data" action="/collections" method="POST">
-					<input type="file" name="myFile" />
-					<input type="hidden" value={this.props.state.userId} name='userId' />
-					<input type="submit" className="btn btn-primary" />
-				</form>
-			</div>
-		 : 
-		 	<div>
-				<p>Please Login First</p> 
-			</div>
+							<div>
+								<form encType="multipart/form-data" action="/collections" method="POST">
+									<input type="file" name="myFile" />
+									<input type="hidden" value={this.props.state.userId} name='userId' />
+									<input type="submit" className="btn btn-primary" />
+								</form>
+							</div>
+						: 
+							<div>
+								<p>Please Login First</p> 
+							</div>
+
 		return(
 			<div className='collections-page'>
 				<form>
@@ -114,32 +148,32 @@ class Collections extends Component {
 							<div className='yellow darken-2 center z-depth-5'>
 							    <h5>Basic Layout</h5>
 							    <img src={BasicLayoutImg} alt='basic layout' />
-							    <input type="radio" id='layout_id' className='filled-in radio-yellow' name="layout" />
-							    <label htmlFor='layout_id'>Select</label>
+							    <input type="radio" id='layout1' className='filled-in radio-yellow' name="layout" onChange={this.gatherTemplate}/>
+							    <label htmlFor='layout1'>Select</label>
 							  </div>
 							  <div className='yellow darken-2 center z-depth-5'>
 							    <h5>Celebration Layout</h5>
 							    <img src={CelebrationLayoutImg} alt='dog layout' />
-							    <input type="radio" id='layout_id' className='filled-in radio-yellow' name="layout" />
-							    <label htmlFor='layout_id'>Select</label>
+							    <input type="radio" id='layout2' className='filled-in radio-yellow' name="layout" onChange={this.gatherTemplate}/>
+							    <label htmlFor='layout2'>Select</label>
 							  </div>
 							  <div className='yellow darken-2 center z-depth-5'>
 							    <h5>Dog Layout</h5>
 								<img src={DogLayoutImg} alt='dog layout' />
-							    <input type="radio" id='layout_id' className='filled-in radio-yellow' name="layout" />
-							    <label htmlFor='layout_id'>Select</label>
+							    <input type="radio" id='layout3' className='filled-in radio-yellow' name="layout" onChange={this.gatherTemplate}/>
+							    <label htmlFor='layout3'>Select</label>
 							  </div>
 							  <div className='yellow darken-2 center z-depth-5'>
 							    <h5>Perfect Layout</h5>
 								<img src={GraphicDesignLayoutImg} alt='perfect layout' />
-							    <input type="radio" id='layout_id' className='filled-in radio-yellow' name="layout" />
-							    <label htmlFor='layout_id'>Select</label>
+							    <input type="radio" id='layout4' className='filled-in radio-yellow' name="layout" onChange={this.gatherTemplate}/>
+							    <label htmlFor='layout4'>Select</label>
 							  </div>
 							  <div className='yellow darken-2 center z-depth-5'>
 							    <h5>Sunflower Layout</h5>
 								<img src={SunflowerLayoutImg} alt='sunflower layout' />
-							    <input type="radio" id='layout_id' className='filled-in radio-yellow' name="layout" />
-							    <label htmlFor='layout_id'>Select</label>
+							    <input type="radio" id='layout5' className='filled-in radio-yellow' name="layout" onChange={this.gatherTemplate}/>
+							    <label htmlFor='layout5'>Select</label>
 							  </div>
 						</Carousel>
 						<br/><hr/><br/>
@@ -163,9 +197,8 @@ class Collections extends Component {
 						<p className='center grey-text lighten-2'>Name it and let us build your SnapBook!
 						<br />
 						<i className="material-icons large opener-icons collections">insert_photo</i></p>
-						<Input type="text" label="Name of SnapBook" s={12} icon='add_to_photos'/>
-
-						<input type='submit' className='btn-large waves-effect waves-light yellow darken-2 col s12' name='submit'/>
+						<Input type="text" label="Name of SnapBook" s={12} icon='add_to_photos' onChange={this.gatherTitle}/>						
+						<input type='submit' className='btn-large waves-effect waves-light yellow darken-2 col s12' name='submit' onClick={this.submitBook}/>
 					</div>
 				</div>
 				</form>

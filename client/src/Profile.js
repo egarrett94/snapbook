@@ -33,6 +33,7 @@ class Profile extends Component {
 			//window.Materalize.toast("Please log in to access this page.", 'red', 3000)
 			this.auth()
 		}
+		
 		return(
 			<div className='profile-page'>
 

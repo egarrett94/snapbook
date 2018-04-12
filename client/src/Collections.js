@@ -180,7 +180,7 @@ class Collections extends Component {
 
 						<h3>STEP TWO: </h3>
 						<p className='center grey-text lighten-2'>Pick your photos!</p>
-						<button data-target="submitPhoto" >Upload Photos</button>
+						
 						<Modal
 							header='Choose File to Upload'
 							trigger={<Button className='modal-trigger btn waves-effect waves-light grey lighten-2 col s4 offset-s4 grey-text text-darken-3 z-depth-4'>Upload Photo</Button>}>

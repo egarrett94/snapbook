@@ -29,3 +29,10 @@ Our MVP will be a web app that will provide a user the ability to upload images 
 | /snapbooks/:snapbookId | PUT | Saves any edits made to photo layout |
 | /snapbooks/:snapbookId | POST | Submit Snapbook to share manager |
 | /snapbooks/:snapbookId | DELETE | Removes saved snapbook from app|
+
+## Screenshots of some main features
+
+![screen shot 2018-04-13 at 9 17 28 am](https://user-images.githubusercontent.com/25888207/38746218-b9d74adc-3efb-11e8-81e3-e86704b650a9.png)
+![screen shot 2018-04-13 at 9 17 41 am](https://user-images.githubusercontent.com/25888207/38746219-b9efc526-3efb-11e8-9a05-c497ebc84c1a.png)
+![screen shot 2018-04-13 at 9 17 50 am](https://user-images.githubusercontent.com/25888207/38746220-ba0d47c2-3efb-11e8-9488-eecf5ab0317e.png)
+![screen shot 2018-04-13 at 9 18 00 am](https://user-images.githubusercontent.com/25888207/38746221-ba229faa-3efb-11e8-90b1-3fb8dbd96965.png)

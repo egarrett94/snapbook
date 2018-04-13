@@ -1,6 +1,9 @@
 {
   "name": "snapbook",
   "version": "1.0.0",
+  "engines": {
+    "node": "8.9.4"
+  },
   "description": "A user driven website to provide our users with user specific user books of photos of users.",
   "main": "server.js",
   "scripts": {

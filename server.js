@@ -17,6 +17,7 @@ app.use('/snapbook', snapbook)
 app.use('/profile', profile)
 
 app.get('*', (req,res, next) => {
+  console.log('Hit')
   res.sendFile(__dirname, '/client', 'build', 'index.html');
 })
 

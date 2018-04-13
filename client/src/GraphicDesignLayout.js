@@ -12,23 +12,23 @@ class GraphicDesignLayout extends Component {
 					<div className='col s12'>
 						<div className='row graphic-layout-top-row'>
 							<div className='col s12 graphic-layout-frame'>
-								<img src='http://www.placekitten.com/g/700/350' alt='meow' />
+								<img src={this.props.pics[0].url} alt='meow' />
 							</div>
 						</div>
 						<div className='row graphic-layout-middle-row'>
 							<div className='col s6 graphic-layout-frame'>
-								<img src='http://www.placekitten.com/g/700/400' alt='meow' />
+								<img src={this.props.pics[1].url} alt='meow' />
 							</div>
 							<div className='col s6 graphic-layout-frame'>
-								<img src='http://www.placekitten.com/g/700/500' alt='meow' />	
+								<img src={this.props.pics[2].url} alt='meow' />	
 							</div>
 						</div>
 						<div className='row graphic-layout-bottom-row'>
 							<div className='col s6 graphic-layout-frame'>
-								<img src='http://www.placekitten.com/g/700/400' alt='meow' />
+								<img src={this.props.pics[3].url} alt='meow' />
 							</div>
 							<div className='col s6 graphic-layout-frame'>
-								<img src='http://www.placekitten.com/g/700/500' alt='meow' />	
+								<img src={this.props.pics[4].url} alt='meow' />	
 							</div>
 						</div>
 					</div>

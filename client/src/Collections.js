@@ -42,7 +42,7 @@ class Collections extends Component {
 		this.gatherTitle = this.gatherTitle.bind(this)
 	}
 
-	componentDidMount() {
+	componentWillMount() {
 		var token = localStorage.getItem('snapbookToken')
 		if(token === 'undefined' || token === null || token === '' || token === undefined){
 			localStorage.removeItem('snapbookToken')
@@ -113,7 +113,17 @@ class Collections extends Component {
 
 	submitBook(e){
 		e.preventDefault()
-		console.log(this.state)
+		axios.post('/snapbook/generate',{
+			template: this.state.template,
+			bookTitle: this.state.bookTitle,
+			selectedPics: this.state.selectedPics,
+			userId: this.props.state.userId
+		}).then(returnVal => {
+			this.setState({
+				redirect: true,
+				location: '/snapbook/' + returnVal.data
+			})
+		})
 	}
 
 	render() {

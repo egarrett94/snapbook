@@ -14,15 +14,18 @@ import Signup from "./Signup";
 import Collections from './Collections';
 import Profile from './Profile';
 import AboutUs from './AboutUs';
-
+import Generator from './Generator'
 
 const mapStateToProps = state => {
 	return{ state }
   }
 
 class App extends Component {
-
+  
   render() {
+    const special = ({match}) => {
+      return <Generator match={match} />
+    }
     return (
      <Router>
         <div>
@@ -33,6 +36,7 @@ class App extends Component {
           <Route path='/collections' render={() => <Collections />} />
           <Route path='/profile' render={() => <Profile />} />
           <Route path='/about' render={() => <AboutUs />} />
+          <Route path='/snapbook/:id' component={special} />
           <Footer />
         </div>
       </Router>

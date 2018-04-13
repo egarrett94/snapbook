@@ -7,6 +7,7 @@ module.exports = (sequelize, DataTypes) => {
   }, {});
   photo.associate = function(models) {
     // associations can be defined here
+    models.photo.belongsToMany(models.snapbook, {through: "snapbooksPhotos"})
   };
   return photo;
 };

@@ -15,6 +15,8 @@ import Collections from './Collections';
 import Profile from './Profile';
 import AboutUs from './AboutUs';
 import Generator from './Generator'
+import UserInfo from './UserInfo';
+
 
 const mapStateToProps = state => {
 	return{ state }
@@ -37,7 +39,8 @@ class App extends Component {
           <Route path='/profile' render={() => <Profile />} />
           <Route path='/about' render={() => <AboutUs />} />
           <Route path='/snapbook/:id' component={special} />
-          <Footer />
+          <Route path='/profile/edit' render={() => <UserInfo />} />
+
         </div>
       </Router>
 
